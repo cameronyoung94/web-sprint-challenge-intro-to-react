@@ -8,9 +8,7 @@ function Character(props) {
     console.log(props);
     return (
         <div>
-            {props.name}
-            <img src= {props.sprites} alt= ''/>
-            <p> {props.weight} </p>
+            <p></p>
         </div>
         )
    }
