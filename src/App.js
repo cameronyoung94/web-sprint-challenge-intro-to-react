@@ -13,20 +13,23 @@ function App() {
     axios
     .get("https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20")
     .then(response => {
-      setCharacter(response.data)
+      setCharacter(response.data.results)
       console.log(response)
     })
     .catch((err) => {
      console.log(err)})
 }, [])
+
 return (
   <div className="App">
-    <h1 className="Header">Characters</h1>
+    {/* <h1 className="Header">Characters</h1> */}
   <div className="App">
     <div>
-      <h1>Pokemon Characters</h1>
+      <h1 style= {{color: 'black', textalign: 'center'}}>Pokemon Characters</h1>
     </div>
-  
+    {character.map((poke, index) => {
+        return <Character key={index} character={poke}/>
+      })}
   </div>
   </div>
 );
